@@ -1,0 +1,59 @@
+<!doctype html> 
+
+<html lang="en" ng-app="DiceApp">
+  <head>
+    <title>Nice up the dice</title>
+    <script src="js/angular.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/dice.js"></script>
+    <script src="js/localStorageModule.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/gradient.css">
+    <link rel="stylesheet" href="css/dice.css">
+  </head>
+  <body>
+    <div class="container">
+      <header id="header" class="jumbotron subhead">
+        <div class="container">
+          <h1>Nice up the Dice</h1>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="row">
+          <div class="span4 rounded">
+            <div ng-controller="DiceController">
+              <h2>Dice</h2>
+              <ul class="inline">
+                <li ng-repeat="die in dice">
+                  <span class="badge badge-inverse">{{die.value}}</span>
+                </li> 
+              </ul>
+              <button class="btn btn-primary btn-large" ng-click="roll()"><i class="icon-refresh"></i> Roll</button>
+              <h2>Configuration</h2>
+              <ul class="unstyled">
+                <li>
+                  <span>The number of dice is: {{num_dice()}} </span>
+                  <button class="btn btn-mini" ng-click="add_die()"><i class="icon-plus"></i> Add</button>
+                  <button class="btn btn-mini" ng-click="remove_die()"><i class="icon-minus"></i> Remove</button>
+                </li>
+                <li>
+                  <span>Color</span>
+                </li>
+                <li>
+                  <span>Sound on/off</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="span8">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
