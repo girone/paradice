@@ -1,0 +1,23 @@
+Layout:
+- Have a first final layout: 
+  - Background color, consistent button-style
+- Show an animation and have a short delay when 
+- Adapt scaling and position of the dice to the number (center dice, reduce scale when adding dice)
+- Add clean, consistent style to all options.
+
+Deployment:
+- Prepare the Chrome Web Store deployment steps for the dice application.
+- Have some place to host the project (Chrome Web Store).
+- Monetization 
+  - Have some information about me, at least a contact email address. 
+  - Add a link to the projects github page, start a feedback tracker there.
+  - Add a link to a project page, e.g. on sternisko.com.
+  - Remove sternisko.com's content or make it öffentlichkeitswirksam.
+
+"Configuration"-area: 
+- Show only on "mouse-hover"
+- Resort to meaningful actions:
+  1. Number of dice, add and remove. Have a senseful maximum number. 
+  2. Color of dice: Have a stylish selection.
+  3. Select "eye-style": show eyes or numbers on each die
+  4. Enable/disable delay with animation.

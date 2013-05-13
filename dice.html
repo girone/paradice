@@ -23,10 +23,11 @@
         <div class="row">
           <div class="span4 rounded">
             <div ng-controller="DiceController">
-              <h2>Dice</h2>
               <ul class="inline">
                 <li ng-repeat="die in dice">
-                  <span class="badge badge-inverse">{{die.value}}</span>
+                <!--<span class="badge badge-inverse">{{die.value}}</span>-->
+                <img width="60" src="svg/{{die.value}}.svg">
+<!--                <object data="svg/{{die.value}}.svg" type="image/svg+xml"></object>-->
                 </li> 
               </ul>
               <button class="btn btn-primary btn-large" ng-click="roll()"><i class="icon-refresh"></i> Roll</button>
