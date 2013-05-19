@@ -1,0 +1,26 @@
+=== Planned Features ===
+
+"Autohide Configuration Options":
+- The configuration field is hidden. 
+- It will be displayed after hovering/clicking a designated part of the app-screen.
+--> Allows to focus on the dice or grants space for an ad-banner.
+
+"Fixation of dice":
+- The value of a die can be fixed (excluded from re-rolling) by clicking its svg-object.
+- Clicking a fixed die removes the fixing.
+- Fixed dice are visually distinctive (e.g. colored shadow).
+--> Essential feature for games like Jazzy, Pasch etc.
+
+"Drag&Drop":
+- Ability to move, position and reorder the visual dice inside the dice-box.
+- The position can be resetted by a button in the configuration.
+--> Good for customization of the app.
+
+"Colorful dice":
+- Present a selection of colors for the dice, the background, app color-schemes.
+
+"Autoscaling":
+- Scale the dice according to their number.
+- Few dice become easier to spot from the distance.
+- Large numbers of dice will better fit the size of the screen / the dice-box.
+
