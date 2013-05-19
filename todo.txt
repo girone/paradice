@@ -1,9 +1,9 @@
 === TODOs before first release ===
 
 Layout:
-o Have a first final layout: 
+x Have a first final layout: 
   - Background color, consistent button-style
-o Add clean, consistent style to all options.
+x Add clean, consistent style to all options.
 o Get an idea how it looks a mobile device and adapt eventually.
 
 Deployment:

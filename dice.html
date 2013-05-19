@@ -32,20 +32,12 @@
                 </li> 
               </ul>
               <button class="btn btn-primary btn-large" ng-click="roll()"><i class="icon-refresh"></i> Roll</button>
-              <h2>Configuration</h2>
-              <ul class="unstyled">
-                <li>
-                  <button class="btn btn-mini btn-info" ng-click="add_die()"><i class="icon-plus"></i> More</button>
-                  <span class="label label-info">{{num_dice()}} {{die_or_dice()}}</span>
-                  <button class="btn btn-mini btn-info" ng-click="remove_die()"><i class="icon-minus"></i> Less</button>
-                </li>
-                <li>
-                  <span>Color</span>
-                </li>
-                <li>
-                  <span>Sound on/off</span>
-                </li>
-              </ul>
+              <hr>
+              <p>
+                <button class="btn btn-mini btn-info" ng-click="add_die()"><i class="icon-plus"></i> More</button>
+                <span class="label label-info">{{num_dice()}} {{die_or_dice()}}</span>
+                <button class="btn btn-mini btn-info" ng-click="remove_die()"><i class="icon-minus"></i> Less</button>
+              </p>
             </div>
           </div>
 
