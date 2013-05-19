@@ -12,40 +12,47 @@
     <link rel="stylesheet" href="css/dice.css">
     <link rel="stylesheet" href="css/animate-custom.css">
   </head>
+
   <body style="background-color:#333333;">
-    <div class="container">
+
+    <div class="container-fluid wrapper">
+
       <header id="header" class="jumbotron subhead">
-        <div class="container">
+        <div class="container-fluid">
           <h1 style="color:#FFFFFF;">Nice up the Dice</h1>
         </div>
       </header>
 
-      <div class="container">
-        <div class="row">
-          <div class="span4 rounded" style="text-align:center;background-color:#FFFFFF;">
-            <div ng-controller="DiceController">
-              <ul class="inline" style="text-align:center;">
-                <li ng-repeat="die in dice">
-                <!--<span class="badge badge-inverse">{{die.value}}</span>-->
-                <img width="60" style="margin:4px;" src="svg/{{die.value}}.svg">
-<!--                <object data="svg/{{die.value}}.svg" type="image/svg+xml"></object>-->
-                </li> 
-              </ul>
-              <button class="btn btn-primary btn-large" ng-click="roll()"><i class="icon-refresh"></i> Roll</button>
-              <hr>
-              <p>
-                <button class="btn btn-mini btn-info" ng-click="add_die()"><i class="icon-plus"></i> More</button>
-                <span class="label label-info">{{num_dice()}} {{die_or_dice()}}</span>
-                <button class="btn btn-mini btn-info" ng-click="remove_die()"><i class="icon-minus"></i> Less</button>
-              </p>
-            </div>
-          </div>
+      <div class="container-fluid span4 rounded text-center" style="background-color:#FFFFFF;" ng-controller="DiceController">
 
-          <div class="span8">
-          </div>
+        <div class="row-fluid dice-container">
+
+          <ul class="inline text-center">
+            <li ng-repeat="die in dice">
+            <!--<span class="badge badge-inverse">{{die.value}}</span>-->
+            <img width="60" style="margin:4px;" src="svg/{{die.value}}.svg">
+<!--                <object data="svg/{{die.value}}.svg" type="image/svg+xml"></object>-->
+            </li> 
+          </ul>
+
         </div>
+
+        <div class="footer">
+
+          <button class="btn btn-primary btn-large" ng-click="roll()"><i class="icon-refresh"></i> Roll</button>
+          <hr>
+          <p>
+            <button class="btn btn-mini btn-info" ng-click="add_die()"><i class="icon-plus"></i> More</button>
+            <span class="label label-info">{{num_dice()}} {{die_or_dice()}}</span>
+            <button class="btn btn-mini btn-info" ng-click="remove_die()"><i class="icon-minus"></i> Less</button>
+          </p>
+
+        </div>
+
       </div>
+
     </div>
+
   </body>
 </html>
 

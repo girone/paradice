@@ -5,6 +5,13 @@ x Have a first final layout:
   - Background color, consistent button-style
 x Add clean, consistent style to all options.
 o Get an idea how it looks a mobile device and adapt eventually.
+  o Maximize used screen size.
+  o Have a fixed size for the dice area. No more change of the container-size
+    when adding or removing dice. (Content+Footer)
+  o Have something like "Takes 100% screen size but at most 40cmx60cm" for
+    container sizes.
+o Allow for scalable dice: Either include SVG into html with scaling as ng-
+  parameter or scale inside the SVGs.
 
 Deployment:
 o Prepare the Chrome Web Store deployment steps for the dice application.
@@ -23,9 +30,11 @@ X - Resort to meaningful actions:
 === Future TODOs ===
 
 Layout:
-- Show an animation and have a short delay when rolling is initiated.
-- Adapt scaling and position of the dice to the number (center dice, reduce scale when adding dice)
-- Show configuration only on "mouse-hover"
+o Cleanup HTML: Separate nicely between markup, CSS and scripting.
+o Show an animation and have a short delay when rolling is initiated.
+o Adapt scaling and position of the dice to the number (center dice, reduce 
+  scale when adding dice)
+o Show configuration only on "mouse-hover"
 
 Deployment:
 o Add a link to a project page, e.g. on sternisko.com.

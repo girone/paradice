@@ -1,3 +1,19 @@
+html, body {
+  height: 100%;  
+}
+
+.container-fluid {
+/*  height: 100%; */
+}
+
+.dice-container {
+/*  height: 60%;*/
+}
+
+.footer {
+/*  height: 40%;*/
+}
+
 div.rounded {
   border: 1px solid #ccc;
   border-radius: 15px;
