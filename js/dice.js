@@ -6,16 +6,13 @@ function DiceController($scope, localStorageService) {
     localStorageService.add("DiceApp_num_dice", $scope.dice.length);
   }
 
-  // Initialize the dice.
+  // Initialize the dice controller variables.
+  $scope.max_num_dice = 6;
   $scope.dice = [{value:'-'}];
-  
-  // Adjusts the dice according to cookie's (here: local webstorage) value.
   var stored_num_dice = localStorageService.get('DiceApp_num_dice');
   if (!stored_num_dice) {
     stored_num_dice = 1;
   }
-  localStorageService.add('NiceUpTheDice_test_key', 42);
-  var test2 = localStorageService.get('NiceUpTheDice_test_key', 42);
   for (var i = 1; i < stored_num_dice; i++) {
     $scope.dice.push({value:'-'});
   }
@@ -25,10 +22,17 @@ function DiceController($scope, localStorageService) {
     return $scope.dice.length;
   };
 
+  // Returns the string "die" or "dice" depending on the number of dice.
+  $scope.die_or_dice = function () {
+    return $scope.num_dice() == 1 ? "die" : "dice";
+  }
+
   // Adds a die.
   $scope.add_die = function () {
-    $scope.dice.push({value:'-'});
-    save_state();
+    if ($scope.num_dice() < $scope.max_num_dice) {
+      $scope.dice.push({value:'-'});
+      save_state();
+    }
   }
 
   // Removes a die, if there is at least one.
@@ -39,7 +43,8 @@ function DiceController($scope, localStorageService) {
     }
   }
 
-  // Rolls the dice, assigning new values to each.
+  // Rolls the dice, assigning new values to each. Will later also play 
+  // initiate animation.
   $scope.roll = function () {
     var num = $scope.dice.length;
     $scope.dice = [];

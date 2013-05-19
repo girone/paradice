@@ -4,6 +4,7 @@ Layout:
 o Have a first final layout: 
   - Background color, consistent button-style
 o Add clean, consistent style to all options.
+o Get an idea how it looks a mobile device and adapt eventually.
 
 Deployment:
 o Prepare the Chrome Web Store deployment steps for the dice application.
@@ -11,10 +12,12 @@ o Have some place to host the project (Chrome Web Store).
 o Monetization 
   o Have some information about me, at least a contact email address. 
   o Add a link to the projects github page, start a feedback tracker there.
+  o Add a "Share"-button: Creates a screenshot from the current dice-result, 
+    encapsulated in a link to the dice-app, which can be shared on facebook.
 
 "Configuration"-area: 
-o - Resort to meaningful actions:
-o   1. Number of dice, add and remove. Have a senseful maximum number. 
+X - Resort to meaningful actions:
+  x 1. Number of dice, add and remove. Have a senseful maximum number. 
 
 
 === Future TODOs ===

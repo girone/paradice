@@ -10,23 +10,24 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="css/gradient.css">
     <link rel="stylesheet" href="css/dice.css">
+    <link rel="stylesheet" href="css/animate-custom.css">
   </head>
-  <body>
+  <body style="background-color:#333333;">
     <div class="container">
       <header id="header" class="jumbotron subhead">
         <div class="container">
-          <h1>Nice up the Dice</h1>
+          <h1 style="color:#FFFFFF;">Nice up the Dice</h1>
         </div>
       </header>
 
       <div class="container">
         <div class="row">
-          <div class="span4 rounded">
+          <div class="span4 rounded" style="text-align:center;background-color:#FFFFFF;">
             <div ng-controller="DiceController">
-              <ul class="inline">
+              <ul class="inline" style="text-align:center;">
                 <li ng-repeat="die in dice">
                 <!--<span class="badge badge-inverse">{{die.value}}</span>-->
-                <img width="60" src="svg/{{die.value}}.svg">
+                <img width="60" style="margin:4px;" src="svg/{{die.value}}.svg">
 <!--                <object data="svg/{{die.value}}.svg" type="image/svg+xml"></object>-->
                 </li> 
               </ul>
@@ -34,9 +35,9 @@
               <h2>Configuration</h2>
               <ul class="unstyled">
                 <li>
-                  <span>The number of dice is: {{num_dice()}} </span>
-                  <button class="btn btn-mini" ng-click="add_die()"><i class="icon-plus"></i> Add</button>
-                  <button class="btn btn-mini" ng-click="remove_die()"><i class="icon-minus"></i> Remove</button>
+                  <button class="btn btn-mini btn-info" ng-click="add_die()"><i class="icon-plus"></i> More</button>
+                  <span class="label label-info">{{num_dice()}} {{die_or_dice()}}</span>
+                  <button class="btn btn-mini btn-info" ng-click="remove_die()"><i class="icon-minus"></i> Less</button>
                 </li>
                 <li>
                   <span>Color</span>
