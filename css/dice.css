@@ -4,6 +4,9 @@ html, body {
 
 .container-fluid {
 /*  height: 100%; */
+/*  min-height: 12%; 
+  max-height: 100px; 
+  See: http://stackoverflow.com/questions/14079413/relative-height-size-with-a-max-height */
 }
 
 .dice-container {
