@@ -4,12 +4,14 @@ Layout:
 x Have a first final layout: 
   - Background color, consistent button-style
 x Add clean, consistent style to all options.
-o Get an idea how it looks a mobile device and adapt eventually.
+o Get an idea how it looks a mobile device and adapt if necessary.
   o Maximize used screen size.
   o Have a fixed size for the dice area. No more change of the container-size
     when adding or removing dice. (Content+Footer)
-  o Have something like "Takes 100% screen size but at most 40cmx60cm" for
-    container sizes.
+  o Have something like "Takes 100% window size but at most 40cmx60cm" for
+    container sizes. It should take 100% on mobile devices (even those with 
+    large resolution) and be rather small on large classical screens. The 
+    second could be achieved by scaling the window by hand.
 o Allow for scalable dice: Either include SVG into html with scaling as ng-
   parameter or scale inside the SVGs.
 
