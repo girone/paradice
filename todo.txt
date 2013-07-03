@@ -31,19 +31,27 @@ X - Resort to meaningful actions:
 
 === Future TODOs ===
 
-Layout:
+Layout
 o Cleanup HTML: Separate nicely between markup, CSS and scripting.
 o Show an animation and have a short delay when rolling is initiated.
 o Adapt scaling and position of the dice to the number (center dice, reduce 
   scale when adding dice)
 o Show configuration only on "mouse-hover"
 
-Deployment:
+Compatibility
+o Add fallback for browsers which do not support inline SVG:
+  <!--[if (gt IE 8)]><!--><svg></svg><!--<![endif]-->
+
+Code
+o Clean up the code, in case anybody has a look into it (potential employers).
+  o Separate markup (html) and layout (css)
+
+Deployment
 o Add a link to a project page, e.g. on sternisko.com.
 o Add an ad-banner.
 o Remove sternisko.com's content or make it öffentlichkeitswirksam.
 
-"Configuration"-area: 
+"Configuration"-area
   2. Color of dice: Have a stylish selection.
   3. Select "eye-style": show eyes or numbers on each die
   4. Enable/disable delay with animation.

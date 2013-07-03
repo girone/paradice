@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20">
+  <defs>
+    <circle id="eye" r="1.5" style="fill:black; stroke:none;" />
+    <rect id="square" x="1" y="1" rx="1.5" ry="1.5" width="18" height="18" style="fill:none; stroke:black; stroke-width:1;" />
+    <g id="undefined">
+      <line x1="10" y1="5" x2="10" y2="15" style="stroke:black; stroke-width:1;"/>
+      <line x1="5" y1="10" x2="15" y2="10" style="stroke:black; stroke-width:1;"/>
+    </g>
+    <g id="1">
+      <use x="10" y="10" xlink:href="#eye" />
+    </g>
+    <g id="2">
+      <use x="5" y="5" xlink:href="#eye" />
+      <use x="15" y="15" xlink:href="#eye" />
+    </g>
+    <g id="3">
+      <use x="10" y="10" xlink:href="#eye" />
+      <use x="5" y="5" xlink:href="#eye" />
+      <use x="15" y="15" xlink:href="#eye" />
+    </g>
+    <g id="4">
+      <use x="5" y="5" xlink:href="#eye" />
+      <use x="15" y="15" xlink:href="#eye" />
+      <use x="5" y="15" xlink:href="#eye" />
+      <use x="15" y="5" xlink:href="#eye" />
+    </g>
+    <g id="5">
+      <use x="10" y="10" xlink:href="#eye" />
+      <use x="5" y="5" xlink:href="#eye" />
+      <use x="15" y="15" xlink:href="#eye" />
+      <use x="5" y="15" xlink:href="#eye" />
+      <use x="15" y="5" xlink:href="#eye" />
+    </g>
+    <g id="6">
+      <use x="5" y="5" xlink:href="#eye" />
+      <use x="15" y="15" xlink:href="#eye" />
+      <use x="5" y="15" xlink:href="#eye" />
+      <use x="15" y="5" xlink:href="#eye" />
+      <use x="5" y="10" xlink:href="#eye" />
+      <use x="15" y="10" xlink:href="#eye" />
+    </g>
+  </defs>
+  <!--<use xlink:href="#g1" />-->
+  <use xlink:href="#square" />
+  <use xlink:href="#6" />
+  <use xlink:href="#undefined" />
+  <!--<circle  r="1.5" style="fill:black; stroke:none;" />                 -->
+</svg>
+

@@ -8,7 +8,7 @@ function DiceController($scope, localStorageService) {
 
   // Initialize the dice controller variables.
   $scope.max_num_dice = 6;
-  $scope.dice = [{value:'-'}];
+  $scope.dice = [{value:'undefined'}];
   var stored_num_dice = localStorageService.get('DiceApp_num_dice');
   if (!stored_num_dice) {
     stored_num_dice = 1;
@@ -30,7 +30,7 @@ function DiceController($scope, localStorageService) {
   // Adds a die.
   $scope.add_die = function () {
     if ($scope.num_dice() < $scope.max_num_dice) {
-      $scope.dice.push({value:'-'});
+      $scope.dice.push({value:'undefined'});
       save_state();
     }
   }

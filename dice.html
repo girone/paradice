@@ -1,4 +1,4 @@
-<!doctype html> 
+<!doctype html>
 
 <html lang="en" ng-app="DiceApp">
   <head>
@@ -15,43 +15,49 @@
 
   <body style="background-color:#333333;">
 
-    <div class="container-fluid wrapper">
+    <div class="container full-height">
 
       <header id="header" class="jumbotron subhead">
-        <div class="container-fluid">
-          <h1 style="color:#FFFFFF;">Nice up the Dice</h1>
-        </div>
+        <h1 style="color:#FFFFFF;">Nice up the Dice</h1>
       </header>
 
-      <div class="container-fluid span4 rounded text-center" style="background-color:#FFFFFF;" ng-controller="DiceController">
+      <div class="container span4 rounded text-center full-width" style="background-color:#FFFFFF;" ng-controller="DiceController">
 
-        <div class="row-fluid dice-container">
+        <div class="row dice-container full-width">
 
           <ul class="inline text-center">
+            Blabla
             <li ng-repeat="die in dice">
-            <!--<span class="badge badge-inverse">{{die.value}}</span>-->
-            <img width="60" style="margin:4px;" src="svg/{{die.value}}.svg">
+              <div class="" style="height:4em; width:4em; min-height:20; min-width:20;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="100%" width="100%" display="block" preserveAspectRatio="xMidYMin">
+                  <!-- <svg defs></svg> for all eye values here, use them below. -->
+                  <use xlink:href="svg/eye.svg#square" />
+                  <use xlink:href="svg/eye.svg#{{die.value}}" />
+                </svg>
+              </div>
+              <!-- <img width="100em" style="margin:4px;"
+              src="svg/{{die.value}}.svg"> -->
 <!--                <object data="svg/{{die.value}}.svg" type="image/svg+xml"></object>-->
-            </li> 
+            </li>
           </ul>
 
-        </div>
+        </div> <!-- dice -->
 
-        <div class="footer">
+        <button class="btn btn-primary btn-large" ng-click="roll()"><i class="icon-refresh"></i> Roll</button>
+        <hr>
 
-          <button class="btn btn-primary btn-large" ng-click="roll()"><i class="icon-refresh"></i> Roll</button>
-          <hr>
-          <p>
+        <div id="configuration" class="row">
             <button class="btn btn-mini btn-info" ng-click="add_die()"><i class="icon-plus"></i> More</button>
             <span class="label label-info">{{num_dice()}} {{die_or_dice()}}</span>
             <button class="btn btn-mini btn-info" ng-click="remove_die()"><i class="icon-minus"></i> Less</button>
-          </p>
-
-        </div>
+        </div> <!-- configuration -->
 
       </div>
+      <div class="footer">
+        <h1 style="color:#FFF;">Footer</h1>
+      </div> <!-- footer -->
 
-    </div>
+    </div> <!-- container -->
 
   </body>
 </html>
