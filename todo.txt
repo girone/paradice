@@ -16,6 +16,8 @@ o Allow for scalable dice: Either include SVG into html with scaling as ng-
   parameter or scale inside the SVGs.
 
 Deployment:
+o Test the application in various browsers (at least, FF, Chromium, IE (current)
+  and Opera). Test it in jsfiddle before.
 o Prepare the Chrome Web Store deployment steps for the dice application.
 o Have some place to host the project (Chrome Web Store).
 o Monetization 
@@ -37,6 +39,8 @@ o Show an animation and have a short delay when rolling is initiated.
 o Adapt scaling and position of the dice to the number (center dice, reduce 
   scale when adding dice)
 o Show configuration only on "mouse-hover"
+o Add shadows for border and dice.
+o Use fast-click, if delay is a problem for the 'feel' of the app.
 
 Compatibility
 o Add fallback for browsers which do not support inline SVG:

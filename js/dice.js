@@ -1,20 +1,23 @@
 angular.module('DiceApp', ['LocalStorageModule'])
 
 function DiceController($scope, localStorageService) {
+  // Default value for dice
+  default_value = 'undefined';
+
   // Stores the current number of dice in the local webstorage.
   save_state = function() {
     localStorageService.add("DiceApp_num_dice", $scope.dice.length);
   }
 
   // Initialize the dice controller variables.
-  $scope.max_num_dice = 6;
-  $scope.dice = [{value:'undefined'}];
+  $scope.max_num_dice = 20;
+  $scope.dice = [{value:default_value}];
   var stored_num_dice = localStorageService.get('DiceApp_num_dice');
   if (!stored_num_dice) {
     stored_num_dice = 1;
   }
   for (var i = 1; i < stored_num_dice; i++) {
-    $scope.dice.push({value:'-'});
+    $scope.dice.push({value:default_value});
   }
 
   // Returns the number of dice.
@@ -30,7 +33,7 @@ function DiceController($scope, localStorageService) {
   // Adds a die.
   $scope.add_die = function () {
     if ($scope.num_dice() < $scope.max_num_dice) {
-      $scope.dice.push({value:'undefined'});
+      $scope.dice.push({value:default_value});
       save_state();
     }
   }
@@ -53,5 +56,28 @@ function DiceController($scope, localStorageService) {
       $scope.dice.push({value:_.random(1,6)});
     }
   };
+  
+  maximum_length_of_squares_in_rect = function (N, a, b) {
+    var l = Math.min(a, b);
+    var n = 1;
+    while (n < N) {
+      l = 0.8 * l;
+      n = Math.floor(a / l) * Math.floor(b / l);
+    }
+    return l;
+  };
+
+  // Determines the edge length of the dice.
+  $scope.edge_length = function () {
+    var dx = $("#dice-interactive-area").width();
+    if (!$("#header") || !$("#footer"))
+      return 20;
+    var offsetHeader = $("#header").offset();
+    var offsetFooter = $("#footer").offset();
+    var dy = offsetFooter.top - offsetHeader.top;
+    return 0.8 * maximum_length_of_squares_in_rect($scope.dice.length, dx, dy);
+  };
+
+
 }
 
