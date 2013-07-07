@@ -23,7 +23,7 @@
           <h1 style="color:#FFFFFF;">Nice up the Dice</h1>
         </header>
 
-        <div class="container span4 rounded text-center" id="dice-interactive-area" style="background-color:#FFFFFF;" ng-controller="DiceController">
+        <div class="container span4 rounded text-center" id="dice-interactive-area" style="background-color:#FFFFFF;" ng-controller="DiceController" ng-style="{height: adaptive_height}">
 
           <div class="row dice-container full-width">
             <div class="span12">
@@ -48,7 +48,7 @@
 
           <div class="row">
             <div id="dice-controlls" class="span12">
-              <button class="btn btn-primary btn-large" ng-click="roll()"><i class="icon-refresh"></i> Roll</button>
+              <button class="btn btn-primary btn-large" ng-click="roll(); console.log(adaptive_height);"><i class="icon-refresh"></i> Roll</button>
               <hr>
               <button class="btn btn-mini btn-info" ng-click="add_die()"><i class="icon-plus"></i> More</button>
               <span class="label label-info">{{num_dice()}} {{die_or_dice()}}</span>

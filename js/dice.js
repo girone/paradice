@@ -66,18 +66,33 @@ function DiceController($scope, localStorageService) {
     }
     return l;
   };
+    
+  // Returns the space between the lower-left corner of the header and the
+  // upper left corner of the footer container.
+  available_content_height = function () {
+    var offsetHeader = $("#header").offset();
+    var heightHeader = $("#header").height();
+    var offsetFooter = $("#footer").offset();
+/*    return offsetFooter.top - offsetHeader.top - heightHeader;*/
+    return window.innerHeight - $("#header").height() - $("#footer").height();
+  };
 
   // Determines the edge length of the dice.
   $scope.edge_length = function () {
     var dx = $("#dice-interactive-area").width();
+    var dy = available_content_height();
     if (!$("#header") || !$("#footer"))
       return 20;
-    var offsetHeader = $("#header").offset();
-    var offsetFooter = $("#footer").offset();
-    var dy = offsetFooter.top - offsetHeader.top;
     return 0.8 * maximum_length_of_squares_in_rect($scope.dice.length, dx, dy);
   };
 
-
+  set_whitebox_height = function (height) {
+    console.log(height);
+    var div = $('#dice-interactive-area');
+    div.style.height = height;
+  };
+  
+  console.log(available_content_height() + "px");
+  $scope.adaptive_height = available_content_height() + "px";
 }
 

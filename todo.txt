@@ -40,6 +40,7 @@ o Adapt scaling and position of the dice to the number (center dice, reduce
   scale when adding dice)
 o Show configuration only on "mouse-hover"
 o Add shadows for border and dice.
+o Center the dice vertically.
 o Use fast-click, if delay is a problem for the 'feel' of the app.
 
 Compatibility
