@@ -5,7 +5,7 @@ x Have a first final layout:
   - Background color, consistent button-style
 x Add clean, consistent style to all options.
 o Get an idea how it looks a mobile device and adapt if necessary.
-  o Maximize used screen size.
+  x Maximize used screen size.
   x Have a fixed size for the dice area. No more change of the container-size
     when adding or removing dice. (Content+Footer)
   o Have something like "Takes 100% window size but at most 40cmx60cm" for
@@ -13,11 +13,13 @@ o Get an idea how it looks a mobile device and adapt if necessary.
     large resolution) and be rather small on large classical screens. The 
     second could be achieved by scaling the window by hand.
   x No moving control-panel when adding or removing dice.
-  o Firefox OS Simulator: Fix it, overflow must not be hidden, however no 
-    scrollbar  should appear.
+  o Firefox OS Simulator: Not useable right now. 
+x Have a consistent height of the content in order to avoid scrollbars. However,
+  overflow/scrollbars must be visible if the content does not fit the window size, 
+  in order to get the buttons.
 X Allow for scalable dice: Either include SVG into html with scaling as ng-
   parameter or scale inside the SVGs.
-o Center the dice vertically.
+x Center the dice vertically.
 
 Deployment:
 o Test the application in various browsers (at least, FF, Chromium, IE (current)
@@ -38,15 +40,21 @@ X - Resort to meaningful actions:
 === Future TODOs ===
 
 Layout
-o Cleanup HTML: Separate nicely between markup, CSS and scripting.
-o Show an animation and have a short delay when rolling is initiated.
-o Adapt scaling and position of the dice to the number (center dice, reduce 
-  scale when adding dice)
-o Show configuration only on "mouse-hover"
-o Add shadows for border and dice.
-o Center the dice vertically.
-o Use fast-click, if delay is a problem for the 'feel' of the app.
-o Use 'Normalize.css' for a consistent style.
+--Usability
+  o Update layout, but keep dice values when the device is rotated by 90 degree.
+  o Use fast-click, if delay is a problem for the 'feel' of the app.
+  F Use 'Normalize.css' for a consistent style. 
+    Failed: Does not change anything, is probably already included in bootstrap.
+  o Position the Roll-More-Less-Dice bar at the bottom of the white space, determine
+  the size of the dice-container using JS like for the outer elements.
+--Eye-Candy
+  o Cleanup HTML: Separate nicely between markup, CSS and scripting.
+  o Show an animation and have a short delay when rolling is initiated.
+  x Adapt scaling and position of the dice to the number (center dice, reduce 
+    scale when adding dice)
+  o Show configuration only on "mouse-hover"
+  o Add shadows for border and dice.
+  o Disable +/- buttons when upper/lower limit is reached.
 
 Compatibility
 o Add fallback for browsers which do not support inline SVG:

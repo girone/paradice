@@ -2,10 +2,6 @@ html, body {
   height: 100%;  
 }
 
-.wrapper {
-  height: auto !important;
-}
-
 #header {
   padding-top:10px;
 }
@@ -27,6 +23,7 @@ div.full-height {
   width: 100%;
   overflow: visible;
   position: relative;
+  text-align: center;
 }
 
 #dice-container {
@@ -61,3 +58,6 @@ div.full-height {
   display: inline-block;
 }
 
+.inverted {
+  color: #FFF;
+}

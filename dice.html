@@ -13,51 +13,51 @@
     <link rel="stylesheet" href="css/gradient.css">
     <link rel="stylesheet" href="css/dice.css">
     <link rel="stylesheet" href="css/animate-custom.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
   </head>
 
   <body style="background-color:#333333;">
 
     <div class="container full-height">
-      <div class="wrapper">
 
-        <header id="header" class="jumbotron subhead">
-          <h1 style="color:#FFFFFF;">Nice up the Dice</h1>
-        </header>
+      <header id="header" class="jumbotron subhead">
+        <h1 class="inverted">Nice up the Dice</h1>
+      </header>
 
-        <div class="container span4 rounded text-center"
-          id="dice-interactive-area" style="background-color:#FFFFFF;"
-          ng-controller="DiceController" ng-init="onload()">
+      <div class="container rounded"
+        id="dice-interactive-area" style="background-color:#FFFFFF;"
+        ng-controller="DiceController" ng-init="onload()">
 
-          <div id="dice-container" class="row">
-            <div id="dice-span">
-              <div ng-repeat="die in dice" class="die-div" ng-style="{height: edge_length + 'px', width: edge_length + 'px'}">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="100%" width="100%" display="block" preserveAspectRatio="xMidYMin">
-                  <use xlink:href="svg/dice.svg#square" />
-                  <use xlink:href="svg/dice.svg#{{die.value}}" />
-                </svg>
-              </div>
+        <div id="dice-container" class="row-fluid">
+          <div id="dice-span">
+            <div ng-repeat="die in dice" class="die-div" ng-style="{height: edge_length + 'px', width: edge_length + 'px'}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="100%" width="100%" display="block" preserveAspectRatio="xMidYMin">
+                <use xlink:href="svg/dice.svg#square" />
+                <use xlink:href="svg/dice.svg#{{die.value}}" />
+              </svg>
             </div>
-          </div> <!-- dice -->
-
-          <div class="row">
-            <div id="dice-controlls" class="span12">
-              <button class="btn btn-primary btn-large" ng-click="roll()"><i class="icon-refresh"></i> Roll</button>
-              <div class="btn-group">
-                <button class="btn btn-large" ng-click="add_die()"><i class="icon-plus"></i> More</button>
-                <button class="btn btn-large disabled" id="dice-count">{{dice.length}}</button>
-                
-                <button class="btn btn-large" ng-click="remove_die()"><i class="icon-minus"></i> Less</button>
-              </div>
-            </div> <!-- controlls -->
           </div>
+        </div> <!-- dice -->
 
-        </div> <!-- white area -->
-      </div> <!-- wrapper -->
+        <div class="row">
+          <div id="dice-controlls" class="span12">
+            <button class="btn btn-primary btn-large" ng-click="roll()"><i class="icon-refresh"></i> Roll</button>
+            <div class="btn-group">
+              <button class="btn btn-large" ng-click="add_die()"><i class="icon-plus"></i> More</button>
+              <button class="btn btn-large disabled" id="dice-count">{{dice.length}}</button>
+              
+              <button class="btn btn-large" ng-click="remove_die()"><i class="icon-minus"></i> Less</button>
+            </div>
+          </div> <!-- controlls -->
+        </div>
+
+      </div> <!-- white area -->
 
       <div id="footer">
-        <div class="row">
+        <div class="row" class="hidden-phone">
           <div class="span12">
-            <h1 style="color:#FFF;">Footer</h1>
+            <h1 class="inverted">Footer</h1>
           </div>
         </div>
       </div> <!-- footer -->
