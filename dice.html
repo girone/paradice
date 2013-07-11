@@ -23,36 +23,30 @@
           <h1 style="color:#FFFFFF;">Nice up the Dice</h1>
         </header>
 
-        <div class="container span4 rounded text-center" id="dice-interactive-area" style="background-color:#FFFFFF;" ng-controller="DiceController" ng-style="{height: adaptive_height}">
+        <div class="container span4 rounded text-center"
+          id="dice-interactive-area" style="background-color:#FFFFFF;"
+          ng-controller="DiceController" ng-init="onload()">
 
-          <div class="row dice-container full-width">
-            <div class="span12">
-
-              <ul class="inline text-center">
-                <li ng-repeat="die in dice">
-                <div class="" style="height:{{edge_length()}}px;
-                  width:{{edge_length()}}px; min-height:20; min-width:20;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="100%" width="100%" display="block" preserveAspectRatio="xMidYMin">
-                      <!-- <svg defs></svg> for all eye values here, use them below. -->
-                      <use xlink:href="svg/dice.svg#square" />
-                      <use xlink:href="svg/dice.svg#{{die.value}}" />
-                    </svg>
-                  </div>
-                  <!-- <img width="100em" style="margin:4px;"
-                  src="svg/{{die.value}}.svg"> -->
-<!--                    <object data="svg/{{die.value}}.svg" type="image/svg+xml"></object>-->
-                </li>
-              </ul>
+          <div id="dice-container" class="row">
+            <div id="dice-span">
+              <div ng-repeat="die in dice" class="die-div" ng-style="{height: edge_length + 'px', width: edge_length + 'px'}">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="100%" width="100%" display="block" preserveAspectRatio="xMidYMin">
+                  <use xlink:href="svg/dice.svg#square" />
+                  <use xlink:href="svg/dice.svg#{{die.value}}" />
+                </svg>
+              </div>
             </div>
           </div> <!-- dice -->
 
           <div class="row">
             <div id="dice-controlls" class="span12">
-              <button class="btn btn-primary btn-large" ng-click="roll(); console.log(adaptive_height);"><i class="icon-refresh"></i> Roll</button>
-              <hr>
-              <button class="btn btn-mini btn-info" ng-click="add_die()"><i class="icon-plus"></i> More</button>
-              <span class="label label-info">{{num_dice()}} {{die_or_dice()}}</span>
-              <button class="btn btn-mini btn-info" ng-click="remove_die()"><i class="icon-minus"></i> Less</button>
+              <button class="btn btn-primary btn-large" ng-click="roll()"><i class="icon-refresh"></i> Roll</button>
+              <div class="btn-group">
+                <button class="btn btn-large" ng-click="add_die()"><i class="icon-plus"></i> More</button>
+                <button class="btn btn-large disabled" id="dice-count">{{dice.length}}</button>
+                
+                <button class="btn btn-large" ng-click="remove_die()"><i class="icon-minus"></i> Less</button>
+              </div>
             </div> <!-- controlls -->
           </div>
 

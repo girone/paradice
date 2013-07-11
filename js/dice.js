@@ -4,6 +4,9 @@ function DiceController($scope, localStorageService) {
   // Default value for dice
   default_value = 'undefined';
 
+  // Set default edge length of dice.
+  $scope.edge_length = 20;
+
   // Stores the current number of dice in the local webstorage.
   save_state = function() {
     localStorageService.add("DiceApp_num_dice", $scope.dice.length);
@@ -34,6 +37,7 @@ function DiceController($scope, localStorageService) {
   $scope.add_die = function () {
     if ($scope.num_dice() < $scope.max_num_dice) {
       $scope.dice.push({value:default_value});
+      update_dice_size();
       save_state();
     }
   }
@@ -42,6 +46,7 @@ function DiceController($scope, localStorageService) {
   $scope.remove_die = function () {
     if ($scope.num_dice() > 1) {
       $scope.dice.pop();
+      update_dice_size();
       save_state();
     }
   }
@@ -70,29 +75,49 @@ function DiceController($scope, localStorageService) {
   // Returns the space between the lower-left corner of the header and the
   // upper left corner of the footer container.
   available_content_height = function () {
-    var offsetHeader = $("#header").offset();
+    var offsetHeader = $("#dice-interactive-area").offset();//$("#header").offset();
     var heightHeader = $("#header").height();
     var offsetFooter = $("#footer").offset();
-/*    return offsetFooter.top - offsetHeader.top - heightHeader;*/
-    return window.innerHeight - $("#header").height() - $("#footer").height();
+    //return 0.9 * (offsetFooter.top - offsetHeader.top);// - heightHeader;
+    return window.innerHeight - $("#header").height() - $("#footer").height() - 3*10;
   };
 
   // Determines the edge length of the dice.
-  $scope.edge_length = function () {
+  $scope.compute_edge_length = function () {
     var dx = $("#dice-interactive-area").width();
-    var dy = available_content_height();
-    if (!$("#header") || !$("#footer"))
-      return 20;
-    return 0.8 * maximum_length_of_squares_in_rect($scope.dice.length, dx, dy);
+    var dy = $("#dice-interactive-area").height();//available_content_height();
+    var num_dice = $scope.dice.length
+    console.log(dx, dy, num_dice);
+    res = 0.8 * maximum_length_of_squares_in_rect(num_dice, dx, dy);
+    console.log(res);
+    return res;
   };
 
-  set_whitebox_height = function (height) {
-    console.log(height);
-    var div = $('#dice-interactive-area');
-    div.style.height = height;
-  };
-  
-  console.log(available_content_height() + "px");
-  $scope.adaptive_height = available_content_height() + "px";
+  console.log("Edge lenght = " + $scope.edge_length);
+  console.log("Window: inner height = " + window.innerHeight + "px, outer height = " +
+              window.outerHeight);
+
+  get_edge_length = function () {
+    console.log("Getting " + $scope.edge_length)
+    return $scope.edge_length;
+  }
+
+  update_dice_size = function () {
+    $scope.edge_length = $scope.compute_edge_length();
+    $('#die-div').width($scope.edge_length);
+    $('#die-div').height($scope.edge_length);
+  }
+
+  onload = function () {
+    $scope.$apply(function () {
+      // Set the size of the dice container.
+      adaptive_height = available_content_height()// + "px";
+      $('#dice-interactive-area').height(adaptive_height);
+
+      // Set the edge length of the dice.
+      update_dice_size();
+    //  alert("sizes set");
+    });
+  }
 }
 

@@ -43,10 +43,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20">
       <use x="15" y="10" xlink:href="#eye" />
     </g>
   </defs>
-  <!--<use xlink:href="#g1" />-->
   <use xlink:href="#square" />
   <use xlink:href="#6" />
   <use xlink:href="#undefined" />
-  <!--<circle  r="1.5" style="fill:black; stroke:none;" />                 -->
 </svg>
 

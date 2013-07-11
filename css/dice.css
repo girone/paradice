@@ -1,11 +1,16 @@
 html, body {
   height: 100%;  
+  overflow: hidden;
 }
 
 .wrapper {
   min-height: 100%;
   height: auto !important;
   margin-bottom: -60px;
+}
+
+#header {
+  padding-top:10px;
 }
 
 #footer {
@@ -23,21 +28,43 @@ div.full-height {
   height: 100%;
 }
 
-div.full-width {
-  width: 100%;
-}
-
 #dice-interactive-area {
   width: 100%;
   overflow: visible;
   position: relative;
 }
 
-div.dice-container {
+#dice-container {
   height: 80%; 
+  margin-left: auto;
+  margin-right: auto;
 }
 
-div.dice-controlls {
+#dice-container:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle; 
+
+  /*background: red; width: 5px;*/
+}
+
+#dice-span {
+  display: inline-block; 
+  vertical-align: middle; 
+  width: 95%;
+}
+
+
+#dice-controlls {
   height: 20px;
+}
+
+#dice-count {
+  width: 60pt;
+}
+
+.die-div {
+  display: inline-block;
 }
 

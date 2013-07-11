@@ -6,14 +6,16 @@ x Have a first final layout:
 x Add clean, consistent style to all options.
 o Get an idea how it looks a mobile device and adapt if necessary.
   o Maximize used screen size.
-  o Have a fixed size for the dice area. No more change of the container-size
+  x Have a fixed size for the dice area. No more change of the container-size
     when adding or removing dice. (Content+Footer)
   o Have something like "Takes 100% window size but at most 40cmx60cm" for
     container sizes. It should take 100% on mobile devices (even those with 
     large resolution) and be rather small on large classical screens. The 
     second could be achieved by scaling the window by hand.
-o Allow for scalable dice: Either include SVG into html with scaling as ng-
+  o No moving control-panel when adding or removing dice.
+X Allow for scalable dice: Either include SVG into html with scaling as ng-
   parameter or scale inside the SVGs.
+o Center the dice vertically.
 
 Deployment:
 o Test the application in various browsers (at least, FF, Chromium, IE (current)
@@ -42,6 +44,7 @@ o Show configuration only on "mouse-hover"
 o Add shadows for border and dice.
 o Center the dice vertically.
 o Use fast-click, if delay is a problem for the 'feel' of the app.
+o Use 'Normalize.css' for a consistent style.
 
 Compatibility
 o Add fallback for browsers which do not support inline SVG:
@@ -50,6 +53,12 @@ o Add fallback for browsers which do not support inline SVG:
 Code
 o Clean up the code, in case anybody has a look into it (potential employers).
   o Separate markup (html) and layout (css)
+
+Performance
+o Experiment with different SVg styles: Inline, external, separate files for
+  each eye-count.
+o Make sure that the dices are just painted once, after the white-box has its size
+  and that the compute_edge_length() function is called only once.
 
 Deployment
 o Add a link to a project page, e.g. on sternisko.com.
