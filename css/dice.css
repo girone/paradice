@@ -1,12 +1,9 @@
 html, body {
   height: 100%;  
-  overflow: hidden;
 }
 
 .wrapper {
-  min-height: 100%;
   height: auto !important;
-  margin-bottom: -60px;
 }
 
 #header {
@@ -15,8 +12,6 @@ html, body {
 
 #footer {
   height: 60px;
-  left: 0;
-  bottom: 0;
 }
 
 div.rounded {
@@ -45,8 +40,6 @@ div.full-height {
   display: inline-block;
   height: 100%;
   vertical-align: middle; 
-
-  /*background: red; width: 5px;*/
 }
 
 #dice-span {

@@ -119,5 +119,6 @@ function DiceController($scope, localStorageService) {
     //  alert("sizes set");
     });
   }
+  console.log('window.innerHeight = ' + window.innerHeight);
 }
 

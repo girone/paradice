@@ -12,7 +12,9 @@ o Get an idea how it looks a mobile device and adapt if necessary.
     container sizes. It should take 100% on mobile devices (even those with 
     large resolution) and be rather small on large classical screens. The 
     second could be achieved by scaling the window by hand.
-  o No moving control-panel when adding or removing dice.
+  x No moving control-panel when adding or removing dice.
+  o Firefox OS Simulator: Fix it, overflow must not be hidden, however no 
+    scrollbar  should appear.
 X Allow for scalable dice: Either include SVG into html with scaling as ng-
   parameter or scale inside the SVGs.
 o Center the dice vertically.
@@ -59,6 +61,7 @@ o Experiment with different SVg styles: Inline, external, separate files for
   each eye-count.
 o Make sure that the dices are just painted once, after the white-box has its size
   and that the compute_edge_length() function is called only once.
+o Make sure only minified and required external CSS and JS is included.
 
 Deployment
 o Add a link to a project page, e.g. on sternisko.com.
