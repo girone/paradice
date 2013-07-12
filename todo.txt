@@ -4,49 +4,53 @@ Layout:
 x Have a first final layout: 
   - Background color, consistent button-style
 x Add clean, consistent style to all options.
-o Get an idea how it looks a mobile device and adapt if necessary.
+x Get an idea how it looks a mobile device and adapt if necessary.
   x Maximize used screen size.
   x Have a fixed size for the dice area. No more change of the container-size
     when adding or removing dice. (Content+Footer)
-  o Have something like "Takes 100% window size but at most 40cmx60cm" for
-    container sizes. It should take 100% on mobile devices (even those with 
-    large resolution) and be rather small on large classical screens. The 
-    second could be achieved by scaling the window by hand.
   x No moving control-panel when adding or removing dice.
-  o Firefox OS Simulator: Not useable right now. 
+  o Firefox OS Simulator: Not useable in landscape-view. Solve it.
 x Have a consistent height of the content in order to avoid scrollbars. However,
   overflow/scrollbars must be visible if the content does not fit the window size, 
   in order to get the buttons.
 X Allow for scalable dice: Either include SVG into html with scaling as ng-
   parameter or scale inside the SVGs.
 x Center the dice vertically.
+o Resort to meaningful Header and Footer text.
 
 Deployment:
 o Test the application in various browsers (at least, FF, Chromium, IE (current)
   and Opera). Test it in jsfiddle before.
 o Prepare the Chrome Web Store deployment steps for the dice application.
 o Have some place to host the project (Chrome Web Store).
+o Add google-analytics or so.
 o Monetization 
   o Have some information about me, at least a contact email address. 
   o Add a link to the projects github page, start a feedback tracker there.
   o Add a "Share"-button: Creates a screenshot from the current dice-result, 
     encapsulated in a link to the dice-app, which can be shared on facebook.
+o Allow for feedback on github.
 
 "Configuration"-area: 
 X - Resort to meaningful actions:
-  x 1. Number of dice, add and remove. Have a senseful maximum number. 
+  x 1. Number of dice, add and remove. Have a meaningful maximum number of dice. 
 
 
 === Future TODOs ===
 
 Layout
 --Usability
-  o Update layout, but keep dice values when the device is rotated by 90 degree.
+  o Update layout, but keep dice values when the device is rotated by 90 degree. 
+    This probably requires the layout-properties to be written as CSS.
   o Use fast-click, if delay is a problem for the 'feel' of the app.
   F Use 'Normalize.css' for a consistent style. 
     Failed: Does not change anything, is probably already included in bootstrap.
   o Position the Roll-More-Less-Dice bar at the bottom of the white space, determine
-  the size of the dice-container using JS like for the outer elements.
+    the size of the dice-container using JS like for the outer elements.
+  o Have something like "Takes 100% window size but at most 40cmx60cm" for
+    container sizes. It should take 100% on mobile devices (even those with 
+    large resolution) and be rather small on large classical screens. The 
+    second could be achieved by scaling the window by hand.
 --Eye-Candy
   o Cleanup HTML: Separate nicely between markup, CSS and scripting.
   o Show an animation and have a short delay when rolling is initiated.
@@ -55,6 +59,7 @@ Layout
   o Show configuration only on "mouse-hover"
   o Add shadows for border and dice.
   o Disable +/- buttons when upper/lower limit is reached.
+  o Do smaller scaling steps, but do not decrease responsiveness.
 
 Compatibility
 o Add fallback for browsers which do not support inline SVG:

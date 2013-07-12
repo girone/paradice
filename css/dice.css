@@ -7,7 +7,7 @@ html, body {
 }
 
 #footer {
-  height: 60px;
+  /*height: 60px;*/
 }
 
 div.rounded {
@@ -60,4 +60,19 @@ div.full-height {
 
 .inverted {
   color: #FFF;
+}
+
+
+@media all and (max-width: 761px) {
+  .inverted {
+    line-height: 22pt;
+    font-size: 22pt;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .inverted {
+    line-height: 18pt;
+    font-size: 18pt;
+  }
 }

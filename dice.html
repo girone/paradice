@@ -42,20 +42,21 @@
 
         <div class="row">
           <div id="dice-controlls" class="span12">
-            <button class="btn btn-primary btn-large" ng-click="roll()"><i class="icon-refresh"></i> Roll</button>
+            <button class="btn btn-primary" ng-click="roll()"><i class="icon-refresh"></i> Roll</button>
             <div class="btn-group">
-              <button class="btn btn-large" ng-click="add_die()"><i class="icon-plus"></i> More</button>
-              <button class="btn btn-large disabled" id="dice-count">{{dice.length}}</button>
+              <button class="btn" ng-click="add_die()"><i class="icon-plus"></i></button>
+              <button class="btn disabled" id="dice-count">{{dice.length}}</button>
               
-              <button class="btn btn-large" ng-click="remove_die()"><i class="icon-minus"></i> Less</button>
+              <button class="btn" ng-click="remove_die()"><i class="icon-minus"></i></button>
             </div>
           </div> <!-- controlls -->
         </div>
 
       </div> <!-- white area -->
 
+      <!-- <div id="footer" class="hidden-phone"> -->
       <div id="footer">
-        <div class="row" class="hidden-phone">
+        <div class="row">
           <div class="span12">
             <h1 class="inverted">Footer</h1>
           </div>
