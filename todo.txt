@@ -29,7 +29,7 @@ o Monetization
   o Add a link to the projects github page, start a feedback tracker there.
   o Add a "Share"-button: Creates a screenshot from the current dice-result, 
     encapsulated in a link to the dice-app, which can be shared on facebook.
-o Allow for feedback on github.
+o Allow for feedback on github ('create issue') or via mail.
 
 "Configuration"-area: 
 X - Resort to meaningful actions:
@@ -45,12 +45,14 @@ Layout
   o Use fast-click, if delay is a problem for the 'feel' of the app.
   F Use 'Normalize.css' for a consistent style. 
     Failed: Does not change anything, is probably already included in bootstrap.
+  o Load bootstrap from external api-server (allows for caching).
   o Position the Roll-More-Less-Dice bar at the bottom of the white space, determine
     the size of the dice-container using JS like for the outer elements.
   o Have something like "Takes 100% window size but at most 40cmx60cm" for
     container sizes. It should take 100% on mobile devices (even those with 
     large resolution) and be rather small on large classical screens. The 
     second could be achieved by scaling the window by hand.
+  o Use 'em' instead of 'px' and 'pt'.
 --Eye-Candy
   o Cleanup HTML: Separate nicely between markup, CSS and scripting.
   o Show an animation and have a short delay when rolling is initiated.
@@ -68,6 +70,7 @@ o Add fallback for browsers which do not support inline SVG:
 Code
 o Clean up the code, in case anybody has a look into it (potential employers).
   o Separate markup (html) and layout (css)
+  o Separate js into functionality (add-dice etc.) and layout (resize-listeners etc.)
 
 Performance
 o Experiment with different SVg styles: Inline, external, separate files for

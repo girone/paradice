@@ -20,7 +20,7 @@ div.full-height {
 }
 
 #dice-interactive-area {
-  width: 100%;
+  /*width: 100%;*/
   overflow: visible;
   position: relative;
   text-align: center;

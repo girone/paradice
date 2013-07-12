@@ -108,17 +108,25 @@ function DiceController($scope, localStorageService) {
     $('#die-div').height($scope.edge_length);
   }
 
-  onload = function () {
-    $scope.$apply(function () {
-      // Set the size of the dice container.
+  update_layout = function () {
+    // Set the size of the dice container.
       adaptive_height = available_content_height()// + "px";
       $('#dice-interactive-area').height(adaptive_height);
 
       // Set the edge length of the dice.
       update_dice_size();
-    //  alert("sizes set");
+      //  alert("sizes set");
+  }
+
+  onload = function () {
+    $scope.$apply(function () {
+      update_layout();
     });
   }
   console.log('window.innerHeight = ' + window.innerHeight);
+
+  $(window).resize(function(){
+    update_layout();
+  });
 }
 
