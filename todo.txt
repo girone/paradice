@@ -67,6 +67,9 @@ Compatibility
 o Add fallback for browsers which do not support inline SVG:
   <!--[if (gt IE 8)]><!--><svg></svg><!--<![endif]-->
 
+Maintainance
+o Create a skript to refresh the ftp-contents.
+
 Code
 o Clean up the code, in case anybody has a look into it (potential employers).
   o Separate markup (html) and layout (css)
