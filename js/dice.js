@@ -87,9 +87,7 @@ function DiceController($scope, localStorageService) {
     var dx = $("#dice-interactive-area").width();
     var dy = $("#dice-interactive-area").height();//available_content_height();
     var num_dice = $scope.dice.length
-    console.log(dx, dy, num_dice);
     res = 0.8 * maximum_length_of_squares_in_rect(num_dice, dx, dy);
-    console.log(res);
     return res;
   };
 
@@ -104,8 +102,8 @@ function DiceController($scope, localStorageService) {
 
   update_dice_size = function () {
     $scope.edge_length = $scope.compute_edge_length();
-    $('#die-div').width($scope.edge_length);
-    $('#die-div').height($scope.edge_length);
+    $('.die-div').width($scope.edge_length);
+    $('.die-div').height($scope.edge_length);
   }
 
   update_layout = function () {
@@ -123,9 +121,9 @@ function DiceController($scope, localStorageService) {
       update_layout();
     });
   }
-  console.log('window.innerHeight = ' + window.innerHeight);
 
   $(window).resize(function(){
+    console.log("window.resize() called");
     update_layout();
   });
 }
