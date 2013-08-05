@@ -29,6 +29,7 @@ o Monetization
   o Add a link to the projects github page, start a feedback tracker there.
   o Add a "Share"-button: Creates a screenshot from the current dice-result, 
     encapsulated in a link to the dice-app, which can be shared on facebook.
+  o Add basic FB-like button, Google-Plusone.js, ...
 o Allow for feedback on github ('create issue') or via mail.
 
 "Configuration"-area: 
