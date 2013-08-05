@@ -7,6 +7,11 @@ function DiceController($scope, localStorageService) {
   // Set default edge length of dice.
   $scope.edge_length = 20;
 
+  // Add the app-window to Fastclick (avoid 300ms delay on mobile devices)
+  $(function() {
+        FastClick.attach(document.body);
+  });
+
   // Stores the current number of dice in the local webstorage.
   save_state = function() {
     localStorageService.add("DiceApp_num_dice", $scope.dice.length);
