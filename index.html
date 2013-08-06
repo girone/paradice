@@ -17,18 +17,12 @@
     <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script>
-      (function(i,s,o,g,r,a,m){
-        i['GoogleAnalyticsObject']=r;
-        i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)
-        },i[r].l=1*new Date();
-        a=s.createElement(o), m=s.getElementsByTagName(o)[0];
-        a.async=1;
-        a.src=g;
-        m.parentNode.insertBefore(a,m)
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-42956988-1', 'sternisko.com');
+      ga('create', 'UA-42993985-1', 'sternisko.com');
       ga('send', 'pageview');
     </script>
   </head>
@@ -62,7 +56,7 @@
             <div class="btn-group">
               <button class="btn" ng-click="add_die()"><i class="icon-plus"></i></button>
               <button class="btn disabled" id="dice-count">{{dice.length}}</button>
-              
+
               <button class="btn" ng-click="remove_die()"><i class="icon-minus"></i></button>
             </div>
           </div> <!-- controlls -->
