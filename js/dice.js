@@ -87,18 +87,11 @@ function DiceController($scope, localStorageService) {
     var dx = $("#dice-interactive-area").width();
     var dy = $("#dice-interactive-area").height();//available_content_height();
     var num_dice = $scope.dice.length
-    console.log(dx, dy, num_dice);
     res = 0.8 * maximum_length_of_squares_in_rect(num_dice, dx, dy);
-    console.log(res);
     return res;
   };
 
-  console.log("Edge lenght = " + $scope.edge_length);
-  console.log("Window: inner height = " + window.innerHeight + "px, outer height = " +
-              window.outerHeight);
-
   get_edge_length = function () {
-    console.log("Getting " + $scope.edge_length)
     return $scope.edge_length;
   }
 
@@ -124,7 +117,6 @@ function DiceController($scope, localStorageService) {
       update_layout();
     });
   }
-  console.log('window.innerHeight = ' + window.innerHeight);
 
   $(window).resize(function(){
     update_layout();
