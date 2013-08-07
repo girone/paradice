@@ -78,7 +78,8 @@ o Clean up the code, in case anybody has a look into it (potential employers).
 o Migrate to Bootstrap 3
 
 Performance
-o Experiment with different SVg styles: Inline, external, separate files for
+o Use CDN for javascript and other externals.
+o Experiment with different SVG styles: Inline, external, separate files for
   each eye-count.
 o Make sure that the dices are just painted once, after the white-box has its size
   and that the compute_edge_length() function is called only once.
