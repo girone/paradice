@@ -31,12 +31,12 @@
 
     <div class="container full-height">
 
-      <header id="header" class="jumbotron subhead">
+      <header id="header" class="jumbotron subhead hidden-phone">
         <h1 class="inverted">Nice up the Dice!</h1>
       </header>
 
       <div class="container rounded"
-        id="dice-interactive-area" style="background-color:#FFFFFF;"
+        id="dice-interactive-area" style="background-color:#FFFFFF; margin:10px 0px;"
         ng-controller="DiceController" ng-init="onload()">
 
         <div id="dice-container" class="row-fluid">
@@ -64,8 +64,7 @@
 
       </div> <!-- white area -->
 
-      <!-- <div id="footer" class="hidden-phone"> -->
-      <div id="footer">
+      <div id="footer" class="hidden-phone">
         <div class="row">
           <div class="span12">
             <h1 class="inverted"><!-- Footer --></h1>

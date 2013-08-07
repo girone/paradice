@@ -75,6 +75,7 @@ Code
 o Clean up the code, in case anybody has a look into it (potential employers).
   o Separate markup (html) and layout (css)
   o Separate js into functionality (add-dice etc.) and layout (resize-listeners etc.)
+o Migrate to Bootstrap 3
 
 Performance
 o Experiment with different SVg styles: Inline, external, separate files for

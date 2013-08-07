@@ -77,14 +77,9 @@ function DiceController($scope, localStorageService) {
     return l;
   };
     
-  // Returns the space between the lower-left corner of the header and the
-  // upper left corner of the footer container.
+  // Returns the available vertical space on the page.
   available_content_height = function () {
-    var offsetHeader = $("#dice-interactive-area").offset();//$("#header").offset();
-    var heightHeader = $("#header").height();
-    var offsetFooter = $("#footer").offset();
-    //return 0.9 * (offsetFooter.top - offsetHeader.top);// - heightHeader;
-    return window.innerHeight - $("#header").height() - $("#footer").height() - 3*10;
+    return window.innerHeight - $("#header").height() - $("#footer").height();
   };
 
   // Determines the edge length of the dice.
@@ -115,12 +110,13 @@ function DiceController($scope, localStorageService) {
 
   update_layout = function () {
     // Set the size of the dice container.
-      adaptive_height = available_content_height()// + "px";
-      $('#dice-interactive-area').height(adaptive_height);
-
-      // Set the edge length of the dice.
-      update_dice_size();
-      //  alert("sizes set");
+    adaptive_height = available_content_height() - 
+      ($('#dice-interactive-area').outerHeight(true) - // include margin
+       $('#dice-interactive-area').innerHeight())
+      - 10; // HACK
+    $('#dice-interactive-area').height(adaptive_height);
+    // Set the edge length of the dice.
+    update_dice_size();
   }
 
   onload = function () {
@@ -133,5 +129,9 @@ function DiceController($scope, localStorageService) {
   $(window).resize(function(){
     update_layout();
   });
+
+  window.addEventListener("orientationchange", function() {
+    update_layout();
+  }, false);  // Cannot use jQuery-mobile here, as it conflicts with angularJS.
 }
 
