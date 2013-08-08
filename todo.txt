@@ -29,6 +29,7 @@ o Monetization
   o Add a link to the projects github page, start a feedback tracker there.
   o Add a "Share"-button: Creates a screenshot from the current dice-result, 
     encapsulated in a link to the dice-app, which can be shared on facebook.
+  o Add basic FB-like button, Google-Plusone.js, ...
 o Allow for feedback on github ('create issue') or via mail.
 
 "Configuration"-area: 
@@ -74,9 +75,11 @@ Code
 o Clean up the code, in case anybody has a look into it (potential employers).
   o Separate markup (html) and layout (css)
   o Separate js into functionality (add-dice etc.) and layout (resize-listeners etc.)
+o Migrate to Bootstrap 3
 
 Performance
-o Experiment with different SVg styles: Inline, external, separate files for
+o Use CDN for javascript and other externals.
+o Experiment with different SVG styles: Inline, external, separate files for
   each eye-count.
 o Make sure that the dices are just painted once, after the white-box has its size
   and that the compute_edge_length() function is called only once.
