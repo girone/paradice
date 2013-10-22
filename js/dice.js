@@ -19,13 +19,13 @@ function DiceController($scope, localStorageService) {
 
   // Initialize the dice controller variables.
   $scope.max_num_dice = 20;
-  $scope.dice = [{value:default_value}];
+  $scope.dice = [];
   var stored_num_dice = localStorageService.get('DiceApp_num_dice');
   if (!stored_num_dice) {
     stored_num_dice = 1;
   }
-  for (var i = 1; i < stored_num_dice; i++) {
-    $scope.dice.push({value:default_value});
+  for (var i = 0; i < stored_num_dice; i++) {
+    $scope.dice.push({value: (i % 6) + 1, index: i});
   }
 
   // Returns the number of dice.
@@ -41,7 +41,8 @@ function DiceController($scope, localStorageService) {
   // Adds a die.
   $scope.add_die = function () {
     if ($scope.num_dice() < $scope.max_num_dice) {
-      $scope.dice.push({value:default_value});
+      $scope.dice.push({value: ($scope.num_dice() % 6) + 1, 
+                        index: $scope.num_dice()});
       update_dice_size();
       save_state();
     }
@@ -60,10 +61,21 @@ function DiceController($scope, localStorageService) {
   // initiate animation.
   $scope.roll = function () {
     var num = $scope.dice.length;
-    $scope.dice = [];
     for (var i = 0; i < num; i++) {
-      // random number using underscore library
-      $scope.dice.push({value:_.random(1,6)});
+      if (!$scope.dice[i].fixed) { 
+        // random number using underscore library
+        $scope.dice[i].value = _.random(1,6);
+      }
+    }
+  };
+
+  // Changes the fixation state of a die.
+  $scope.switch_fixation = function (index) {
+    console.log("switch_fixation(" + index + ") called");
+    if ($scope.dice[index].fixed) {
+      $scope.dice[index].fixed = "";
+    } else {
+      $scope.dice[index].fixed = "fixed";
     }
   };
   

@@ -43,9 +43,9 @@
 
         <div id="dice-container" class="row-fluid">
           <div id="dice-span">
-            <div ng-repeat="die in dice" class="die-div" ng-style="{height: edge_length + 'px', width: edge_length + 'px'}">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="100%" width="100%" display="block" preserveAspectRatio="xMidYMin">
-                <use xlink:href="svg/dice.svg#square" />
+            <div ng-repeat="die in dice" class="die-div" ng-style="{height: edge_length + 'px', width: edge_length + 'px'}"">
+              <svg ng-click="switch_fixation(die.index)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="100%" width="100%" display="block" preserveAspectRatio="xMidYMin">
+                <use xlink:href="svg/dice.svg#square{{die.fixed}}" />
                 <use xlink:href="svg/dice.svg#{{die.value}}" />
               </svg>
             </div>
