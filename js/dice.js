@@ -58,9 +58,8 @@ function DiceController($scope, $timeout, localStorageService) {
     }
   }
 
-  // Rolls the dice, assigning new values to each. Will later also play 
-  // initiate animation.
-  $scope.roll = function () {
+  // Assigns random numbers 1...6 to the active dice.
+  assign_random_numbers = function () {
     var num = $scope.dice.length;
     for (var i = 0; i < num; i++) {
       if (!$scope.dice[i].fixed) { 
@@ -68,6 +67,38 @@ function DiceController($scope, $timeout, localStorageService) {
         $scope.dice[i].value = _.random(1,6);
       }
     }
+  }
+
+  // Animates the rolling of the dice for @duration seconds.
+  animate_roll = function (duration) {
+    var step = 0.2;  // seconds
+    // Rotate the dice.
+    // TODO(Jonas): Randomize the rotation per die.
+    $(".die-div").animateRotate(90, duration * 1000, "linear", function() {});
+    $("#dice-container").effect("bounce", "slow");
+    $("#dice-container").effect("shake", "slow");
+
+    // "Flicker" the values.
+    for (var time = 0.; time < duration; time += step) {
+      $timeout(function() {
+        assign_random_numbers();
+      }, time * 1000);
+    }
+  }
+
+  // Rolls the dice, assigning new values to each. Will later also play 
+  // initiate animation.
+  roll = function () {
+    var duration = 1.2;  // seconds
+    animate_roll(duration);
+    $timeout(function() {
+      assign_random_numbers();
+    }, duration * 1000);
+  }
+
+  // A wrapper to roll().
+  $scope.roll = function () {
+    roll();
   };
 
   // Changes the fixation state of a die.
@@ -139,5 +170,26 @@ function DiceController($scope, $timeout, localStorageService) {
   window.addEventListener("orientationchange", function() {
     update_layout();
   }, false);  // Cannot use jQuery-mobile here, as it conflicts with angularJS.
+
+  window.addEventListener("deviceshake", function () {
+    console.log("shake sensed");
+    roll();
+  }, false);
 }
+
+$.fn.animateRotate = function(angle, duration, easing, complete) {
+  var args = $.speed(duration, easing, complete);
+  var step = args.step;
+  return this.each(function(i, e) {
+    args.step = function(now) {
+      $.style(e, 'transform', 'rotate(' + now + 'deg)');
+      if (step) {
+        return step.apply(this, arguments);
+      }
+    };
+
+    $({deg: 0}).animate({deg: angle}, args);
+  });
+};
+
 
