@@ -51,7 +51,7 @@ div.full-height {
 }
 
 #dice-count {
-  width: 60pt;
+  width: 20pt;
 }
 
 .die-div {
@@ -62,6 +62,9 @@ div.full-height {
   color: #FFF;
 }
 
+.text {
+  text-align: left;
+}
 
 @media all and (max-width: 761px) {
   .inverted {
@@ -76,3 +79,4 @@ div.full-height {
     font-size: 18pt;
   }
 }
+

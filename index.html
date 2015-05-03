@@ -10,6 +10,7 @@
     <script src="js/dice.js"></script>
     <script src="js/localStorageModule.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
     <script type='application/javascript' src='js/fastclick.js'></script>
     <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
@@ -43,7 +44,7 @@
 
         <div id="dice-container" class="row-fluid">
           <div id="dice-span">
-            <div ng-repeat="die in dice" class="die-div" ng-style="{height: edge_length + 'px', width: edge_length + 'px'}"">
+            <div ng-repeat="die in dice" class="die-div" ng-style="{height: edge_length + 'px', width: edge_length + 'px'}">
               <svg ng-click="switch_fixation(die.index)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="100%" width="100%" display="block" preserveAspectRatio="xMidYMin">
                 <use xlink:href="svg/dice.svg#square{{die.fixed}}" />
                 <use xlink:href="svg/dice.svg#{{die.value}}" />
@@ -61,7 +62,26 @@
 
               <button class="btn" ng-click="remove_die()"><i class="icon-minus"></i></button>
             </div>
+            <a href="#infoModal" role="button" class="btn" data-toggle="modal"><i class="icon-info-sign"></i></a>
           </div> <!-- controlls -->
+        </div>
+
+        <div id="infoModal" class="modal hide fade text" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+            <h3>ParaDice v1.0</h3>
+            <p>A lightweight, resource-saving web-app to roll the {dice,dados,dés,W&uuml;rfel}.<p>
+          </div>
+          <div class="modal-body">
+            <p>Tap a die to fix it (eyes wont change on roll).</p>
+            <p>Please give your feedback, report bugs or request new features 
+               via Twitter <a href="https://twitter.com/julio191">@julio191</a> 
+               or to <a href="https://github.com/girone/paradice/issues">the project's page</a> 
+               at github.
+               <!--<a href="http://sternisko.com/app-eck/">the developer's blog</a>.-->
+            </p>
+          </div>
+          <div class="modal-footer">
+          </div>
         </div>
 
       </div> <!-- white area -->
