@@ -1,16 +1,17 @@
 angular.module('DiceApp', ['LocalStorageModule'])
 
-function DiceController($scope, localStorageService) {
+// Add the app-window to Fastclick (avoid 300ms delay on mobile devices)
+$(function() {
+  FastClick.attach(document.body);
+});
+
+
+function DiceController($scope, $timeout, localStorageService) {
   // Default value for dice
   default_value = 'undefined';
 
   // Set default edge length of dice.
   $scope.edge_length = 20;
-
-  // Add the app-window to Fastclick (avoid 300ms delay on mobile devices)
-  $(function() {
-        FastClick.attach(document.body);
-  });
 
   // Stores the current number of dice in the local webstorage.
   save_state = function() {
